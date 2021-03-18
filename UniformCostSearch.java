@@ -1,3 +1,8 @@
+// A Java program for UCS
+// single source shortest path 
+// algorithm. The program is for 
+// adjacency matrix representation 
+// of the graph. 
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.InputMismatchException;
@@ -31,6 +36,11 @@ public class UniformCostSearch
         this.parent = new int[numberOfNodes + 1];
     }
  
+    // Function that implements UCS
+	// single source shortest path 
+	// algorithm for a graph represented 
+	// using adjacency matrix 
+	// representation 
     public int uniformCostSearch(int adjacencyMatrix[][], int source, int destination)
     {
         int evaluationNode;
@@ -51,9 +61,11 @@ public class UniformCostSearch
 	        }
         }
  
+        // Making use of a priority queue to hold the data tree data
         priorityQueue.add(new Node(source, 0));
         distances[source] = 0;
  
+        // Printing the node that is currently being evaluated.
         while (!priorityQueue.isEmpty())
         {
             evaluationNode = getNodeWithMinDistanceFromPriorityQueue();
@@ -68,6 +80,7 @@ public class UniformCostSearch
         return distances[destination];
     }
  
+    // Function to add frontiers to the queue
     private void addFrontiersToQueue(int evaluationNode)
     {
         for (int destination = 1; destination <= numberOfNodes; destination++)
@@ -101,6 +114,7 @@ public class UniformCostSearch
         return node.node;
     }
  
+    // Function to print path
     public void printPath()
     {
         path.add(destination);
