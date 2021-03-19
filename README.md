@@ -1,4 +1,4 @@
-# MazeBFS
+# Maze UCS
 
 Here's a full Uniform Cost Search Maze solver.
 It returns a full shortest path to the end point if found.
